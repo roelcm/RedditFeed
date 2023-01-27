@@ -10,6 +10,7 @@ import SwiftUI
 struct UFIButtonViewModel {
     let sfImage: String
     let subtitle: String
+    let action: () -> Void
 }
 
 struct UFIButton: View {
@@ -17,7 +18,7 @@ struct UFIButton: View {
     
     var body: some View {
         Button {
-            
+            buttonVM.action()
         } label: {
             VStack {
                 Image(systemName: buttonVM.sfImage)
@@ -25,6 +26,7 @@ struct UFIButton: View {
                     .frame(width: 35, height: 35)
                 
                 Text(buttonVM.subtitle)
+                    .font(.subheadline)
             }
         }
     }
@@ -35,7 +37,8 @@ struct UFIButton_Previews: PreviewProvider {
         UFIButton(buttonVM:
                     UFIButtonViewModel(
                         sfImage: "square.and.arrow.up.circle.fill",
-                        subtitle: "Share"
+                        subtitle: "Share",
+                        action: {}
                     )
         )
     }

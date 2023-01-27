@@ -8,9 +8,9 @@
 import Foundation
 
 /// Reddit Comment
-struct Comment: Decodable {
+struct Comment: Decodable, Identifiable {
     let id: String
     let author: String
     let score: Int
-    let body: String?
+    let body: String
 }

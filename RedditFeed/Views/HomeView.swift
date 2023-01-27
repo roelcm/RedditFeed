@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct HomeView: View {
-    @StateObject var vm = SubredditListingViewModel()
+    @StateObject var vm = ListingViewModel<SubredditListing>(
+        url: RedditAPI.subredditURL("memes")
+    )
 
     var body: some View {
         // Credit to Gary Tokmen for this bit of Geometry Reader code: https://blog.prototypr.io/how-to-vertical-paging-in-swiftui-f0e4afa739ba
@@ -32,6 +34,19 @@ struct HomeView: View {
             .tabViewStyle(
                 PageTabViewStyle(indexDisplayMode: .never)
             )
+            .overlay(content: {
+                if vm.isLoading {
+                    ProgressView()
+                }
+            })
+            .alert("Application Error", isPresented: $vm.showAlert, actions: {
+                Button("OK") {}
+            }, message: {
+                if let errorMessage = vm.errorMessage {
+                    Text(errorMessage)
+                }
+            })
+            .listStyle(.plain)
             .task {
                 await vm.fetchListing()
             }

@@ -23,6 +23,8 @@ extension Post {
 extension Comment {
     /// Used to initialize a Comment for Debug purposes
     static var mockComment: Comment {
+//        let listing = Bundle.main.decode(SubredditListing.self, from: "memesAPIResponse.json")
+//        listing.posts[0].num_comments
         Comment(
             id: "1000",
             author: "Test User",

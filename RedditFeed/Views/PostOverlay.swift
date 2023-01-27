@@ -24,7 +24,7 @@ struct PostOverlay: View {
                             .lineLimit(2)
                     }
                     Spacer()
-                    UFITower()
+                    UFITower(post: post)
                 }
                 .foregroundColor(.white)
                 .padding()
