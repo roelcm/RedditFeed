@@ -8,14 +8,18 @@
 import SwiftUI
 
 struct PostView: View {
-    var post: Post
+    let post: Post
     var body: some View {
-        AsyncImage(url: URL(string: post.url)) { image in
-            image
-                .resizable()
-                .scaledToFit()
-        } placeholder: {
-            ProgressView()
+        ZStack {
+            AsyncImage(url: URL(string: post.url)) { image in
+                image
+                    .resizable()
+                    .scaledToFit()
+            } placeholder: {
+                ProgressView()
+            }
+
+            PostOverlay(post: post)
         }
     }
 }
@@ -23,5 +27,6 @@ struct PostView: View {
 struct PostView_Previews: PreviewProvider {
     static var previews: some View {
         PostView(post: Post.mockPost)
+            .background(.black)
     }
 }

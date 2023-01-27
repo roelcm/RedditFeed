@@ -56,11 +56,11 @@ enum APIError: Error, LocalizedError {
         case .invalidResponseStatus:
             return NSLocalizedString("The API failed to issue a valid response.", comment: "")
         case .dataTaskError(let string):
-            return string
+            return NSLocalizedString("Data Task Error: ", comment:"") + string
         case .corruptData:
             return NSLocalizedString("The data provided appears to be corrupt", comment: "")
         case .decodingError(let string):
-            return string
+            return NSLocalizedString("Decoding Error: ", comment:"") + string
         }
     }
 }

@@ -12,6 +12,7 @@ struct RedditFeedApp: App {
     var body: some Scene {
         WindowGroup {
             HomeView()
+                .background(.black)
         }
     }
 }

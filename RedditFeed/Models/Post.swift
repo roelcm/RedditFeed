@@ -16,4 +16,5 @@ struct Post: Decodable, Identifiable {
     let author: String
     let num_comments: Int
     let ups: Int
+    let subreddit: String
 }

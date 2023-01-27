@@ -16,7 +16,7 @@ extension SubredditListing {
 extension Post {
     /// Used to create a Post for example Debug purposes
     static var mockPost: Post {
-        Post(id: "123456", title: "Test Post Title", selftext: "Test Post description \n More test post text", url: "", author: "me", num_comments: 50, ups: 1000)
+        Post(id: "123456", title: "This is a long description of the post that has extra words. Adding more words to test ", selftext: "Test Post description \n More test post text", url: "https://i.redd.it/t6gogrkvbeea1.gif", author: "me", num_comments: 50, ups: 1000, subreddit: "memes")
     }
 }
 

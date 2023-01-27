@@ -15,6 +15,7 @@ class SubredditListingViewModel: ObservableObject {
     
     @MainActor
     func fetchListing() async {
+        print("help")
         let urlString = RedditAPI.subredditURL("memes")
         let listingAPIService = APIService(urlString: urlString)
         isLoading.toggle()
@@ -24,6 +25,7 @@ class SubredditListingViewModel: ObservableObject {
         do {
             listing = try await listingAPIService.getJSON()
         } catch {
+            print(error.localizedDescription)
             showAlert = true
             errorMessage = error.localizedDescription + "\nPlease contant the developer and provide this error and the steps to reproduce"
         }

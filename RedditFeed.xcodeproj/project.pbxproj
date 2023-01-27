@@ -25,6 +25,9 @@
 		4566EA0D2983058E007BB839 /* RedditAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4566EA0C2983058E007BB839 /* RedditAPI.swift */; };
 		4566EA1029830744007BB839 /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4566EA0F29830744007BB839 /* Bundle+Extension.swift */; };
 		4566EA1229831997007BB839 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4566EA1129831997007BB839 /* PostView.swift */; };
+		4566EA1429831B5B007BB839 /* PostOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4566EA1329831B5B007BB839 /* PostOverlay.swift */; };
+		4566EA1629831E3D007BB839 /* UFITower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4566EA1529831E3D007BB839 /* UFITower.swift */; };
+		4566EA1829831FAD007BB839 /* UFIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4566EA1729831FAD007BB839 /* UFIButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +69,9 @@
 		4566EA0C2983058E007BB839 /* RedditAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedditAPI.swift; sourceTree = "<group>"; };
 		4566EA0F29830744007BB839 /* Bundle+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
 		4566EA1129831997007BB839 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
+		4566EA1329831B5B007BB839 /* PostOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostOverlay.swift; sourceTree = "<group>"; };
+		4566EA1529831E3D007BB839 /* UFITower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UFITower.swift; sourceTree = "<group>"; };
+		4566EA1729831FAD007BB839 /* UFIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UFIButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +178,9 @@
 			children = (
 				4566E9CF2982F8A4007BB839 /* HomeView.swift */,
 				4566EA1129831997007BB839 /* PostView.swift */,
+				4566EA1329831B5B007BB839 /* PostOverlay.swift */,
+				4566EA1529831E3D007BB839 /* UFITower.swift */,
+				4566EA1729831FAD007BB839 /* UFIButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -340,9 +349,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4566EA1429831B5B007BB839 /* PostOverlay.swift in Sources */,
 				4566E9D02982F8A4007BB839 /* HomeView.swift in Sources */,
 				4566EA1029830744007BB839 /* Bundle+Extension.swift in Sources */,
 				4566EA02298301E2007BB839 /* SubredditListingViewModel.swift in Sources */,
+				4566EA1629831E3D007BB839 /* UFITower.swift in Sources */,
 				4566EA00298301BA007BB839 /* APIService.swift in Sources */,
 				4566EA0A29830517007BB839 /* Comment.swift in Sources */,
 				4566E9CE2982F8A4007BB839 /* RedditFeedApp.swift in Sources */,
@@ -350,6 +361,7 @@
 				4566EA082983030E007BB839 /* Post.swift in Sources */,
 				4566EA0429830264007BB839 /* MockData.swift in Sources */,
 				4566EA0D2983058E007BB839 /* RedditAPI.swift in Sources */,
+				4566EA1829831FAD007BB839 /* UFIButton.swift in Sources */,
 				4566EA1229831997007BB839 /* PostView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
