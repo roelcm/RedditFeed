@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct UFITower: View {
+    @EnvironmentObject var session: Session
     @State private var showingComments = false
     @State private var showingShareSheet = false
     let post: Post
+    @State var liked = false
 
     var body: some View {
         VStack(spacing: 20) {
@@ -18,9 +20,19 @@ struct UFITower: View {
                 sfImage: "hand.thumbsup.fill",
                 subtitle: "\(post.ups)",
                 action: {
-                    // TODO: liking action
+                    session.vote(.post, liked ? .up : .none, name: post.id) { result in
+                        switch result {
+                        case .success(let _):
+                            liked.toggle()
+                        case .failure(let error):
+                            // TODO: Handle Error
+                            print(error)
+                        }
+                    }
                 }
             ))
+            .foregroundColor(liked ? .blue : .white)
+
             UFIButton(buttonVM: UFIButtonViewModel(
                 sfImage: "text.bubble.fill",
                 subtitle: "\(post.num_comments)",
@@ -28,6 +40,7 @@ struct UFITower: View {
                     showingComments.toggle()
                 }
             ))
+
             UFIButton(buttonVM: UFIButtonViewModel(
                 sfImage: "square.and.arrow.up.circle.fill",
                 subtitle: "Share",

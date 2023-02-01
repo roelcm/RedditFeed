@@ -9,7 +9,13 @@ import Foundation
 
 extension SubredditListing {
     static var mockListing: SubredditListing {
-        Bundle.main.decode(SubredditListing.self, from: "memesAPIResponse.json")
+        Bundle.main.decode(SubredditListing.self, from: "memesMockResponse.json")
+    }
+}
+
+extension PostListing {
+    static var mockListing: PostListing {
+        Bundle.main.decode(PostListing.self, from: "commentsMockResponse.json")
     }
 }
 

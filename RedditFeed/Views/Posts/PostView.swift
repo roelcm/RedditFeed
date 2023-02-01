@@ -9,6 +9,8 @@ import SwiftUI
 
 struct PostView: View {
     let post: Post
+    var hiddingOverlay: Bool
+    
     var body: some View {
         ZStack {
             AsyncImage(url: URL(string: post.url)) { image in
@@ -18,15 +20,16 @@ struct PostView: View {
             } placeholder: {
                 ProgressView()
             }
-
-            PostOverlay(post: post)
+            if (!hiddingOverlay) {
+                PostOverlay(post: post)
+            }
         }
     }
 }
 
 struct PostView_Previews: PreviewProvider {
     static var previews: some View {
-        PostView(post: Post.mockPost)
+        PostView(post: Post.mockPost, hiddingOverlay: false)
             .background(.black)
     }
 }

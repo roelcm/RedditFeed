@@ -27,8 +27,10 @@ struct UFIButton: View {
                 
                 Text(buttonVM.subtitle)
                     .font(.subheadline)
+                    .bold()
             }
         }
+        .shadow(radius: 30)
     }
 }
 

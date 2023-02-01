@@ -8,16 +8,23 @@
 import Foundation
 
 struct RedditAPI {
+    static private let baseURL = "https://www.reddit.com/"
+    static private let oauthURL = "https://oauth.reddit.com/"
+    
     static func subredditURL(_ subreddit: String) -> String {
-        return "https://www.reddit.com/r/\(subreddit).json"
+        return baseURL + "r/\(subreddit).json"
     }
     
     static func postURL(_ subreddit: String, _ postId: String) -> String {
-        return "https://www.reddit.com/r/\(subreddit)/comments/\(postId)"
+        return baseURL + "r/\(subreddit)/comments/\(postId)"
     }
     
     static func postJSONURL(_ subreddit: String, _ postId: String) -> String {
         return postURL(subreddit, postId + ".json")
+    }
+
+    static func voteURL() -> String {
+        oauthURL + "api/vote"
     }
 
 }

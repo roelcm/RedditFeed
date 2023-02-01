@@ -11,9 +11,14 @@ import Foundation
 struct SubredditListing: Decodable {
     let data: SubredditListingData
     var posts: [Post] {
-        return data.children.map { (postData) -> Post in
-            postData.data
-        }
+        return data.children
+            .filter {
+                // Filters posts that don't contain images
+                $0.data.url.contains("i.")
+            }
+            .map { (postData) -> Post in
+                postData.data
+            }
     }
 
     struct SubredditListingData: Decodable {
@@ -23,56 +28,4 @@ struct SubredditListing: Decodable {
             let data: Post
         }
     }
-}
-
-struct Empty: Decodable { }
-
-extension UnkeyedDecodingContainer {
-  public mutating func skip() throws {
-    _ = try decode(Empty.self)
-  }
-}
-
-struct PostListing: Decodable {
-    let commentListing: CommentListing
-    
-    init(from decoder: Decoder) throws {
-        var container = try decoder.unkeyedContainer()
-        /// Skip the first container which represents the post.
-        _ = try container.skip()
-        self.commentListing = try container.decode(CommentListing.self)
-    }
-    
-    struct CommentListing: Decodable {
-        let kind: String
-        let data: CommentListingData
-
-        var comments: [Comment] {
-            return data.children.map { (commentData) -> Comment in
-                return commentData.data
-            }
-        }
-
-        struct CommentListingData: Decodable {
-            let children: [CommentData]
-            enum CodingKeys: String, CodingKey {
-                case children
-            }
-
-            init(from decoder: Decoder) throws {
-                let container = try decoder.container(keyedBy: CodingKeys.self)
-                let collection = try container.decode(
-                    LossyCodableList<CommentData>.self,
-                    forKey: .children
-                )
-                
-                children = collection.elements
-            }
-
-            struct CommentData: Decodable {
-                let data: Comment
-            }
-        }
-    }
-
 }

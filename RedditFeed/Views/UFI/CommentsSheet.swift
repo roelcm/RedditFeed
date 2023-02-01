@@ -19,8 +19,7 @@ struct CommentsSheet: View {
     var body: some View {
         List {
             ForEach(vm.listing?.commentListing.comments ?? [] ) { comment in
-                Text(comment.body)
-                    .foregroundColor(.black)
+                CommentRow(comment: comment)
             }
         }
         .overlay(content: {

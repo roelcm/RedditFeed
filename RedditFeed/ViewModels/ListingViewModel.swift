@@ -8,11 +8,11 @@
 import Foundation
 
 class ListingViewModel<T: Decodable>: ObservableObject {
-    let listingViewService: ListingViewService
-    let urlString: String
+    let listingViewService: ListingViewServiceProtocol
+    var urlString: String
 
-    init(url: String) {
-        self.listingViewService = ListingViewService()
+    init(url: String, listingViewService: ListingViewServiceProtocol = ListingViewService() ) {
+        self.listingViewService = listingViewService
         self.urlString = url
     }
 
@@ -33,19 +33,9 @@ class ListingViewModel<T: Decodable>: ObservableObject {
             }
             listing = try await self.listingViewService.fetchRequest(url: url)
         } catch {
-            print(error.localizedDescription)
             showAlert = true
             errorMessage = error.localizedDescription + "\nPlease contant the developer and provide this error and the steps to reproduce"
         }
     }
     
 }
-
-//extension ListingViewModel {
-//    convenience init(forPreview: Bool = false) {
-////        self.init()
-////        if forPreview {
-////            self.listing = SubredditListing.mockListing
-//        }
-//    }
-//}

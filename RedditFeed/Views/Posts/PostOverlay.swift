@@ -35,7 +35,7 @@ struct PostOverlay: View {
     var gradient: LinearGradient {
         // Gradient can by improved by only taking the space of the overlay
         .linearGradient(
-            Gradient(colors: [.black.opacity(0.6), .black.opacity(0)]),
+            Gradient(colors: [.black.opacity(0.5), .black.opacity(0)]),
             startPoint: .bottom,
             endPoint: .center)
     }
@@ -43,6 +43,6 @@ struct PostOverlay: View {
 
 struct PostOverlay_Previews: PreviewProvider {
     static var previews: some View {
-        PostView(post: Post.mockPost)
+        PostView(post: Post.mockPost, hiddingOverlay: false)
     }
 }
