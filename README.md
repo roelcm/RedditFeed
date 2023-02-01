@@ -1,6 +1,13 @@
 # RedditFeed
 TikTok like feed for image based subreddits. Allows users to login and scroll through the media of a couple of subreddits, like posts, view and upvote comments.
 
+<p float="left">
+  <img src="screenshots/login_screen.png" alt="drawing" width="200"/>
+  <img src="screenshots/home_screen.png" alt="drawing" width="200"/>
+  <img src="screenshots/home_screen_hidden.png" alt="drawing" width="200"/>
+  <img src="screenshots/comment_screen.png" alt="drawing" width="200"/>
+</p>
+
 ### How To
 1. Add Config file with Reddit App key ([how-to link](https://medium.com/swift-india/secure-secrets-in-ios-app-9f66085800b4))
 2. Add OAuthSwift package
