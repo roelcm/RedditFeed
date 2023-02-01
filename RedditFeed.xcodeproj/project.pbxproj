@@ -73,6 +73,7 @@
 		450F0DE82989BDBA00C4375E /* PostListingViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListingViewModelTests.swift; sourceTree = "<group>"; };
 		450F0DEC2989C54900C4375E /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		450F0DEE2989C56800C4375E /* Dictionary+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Extension.swift"; sourceTree = "<group>"; };
+		450F0DF02989EBF400C4375E /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		4566E9CA2982F8A4007BB839 /* RedditFeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RedditFeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4566E9CD2982F8A4007BB839 /* RedditFeedApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedditFeedApp.swift; sourceTree = "<group>"; };
 		4566E9CF2982F8A4007BB839 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -175,6 +176,7 @@
 				4566E9F82982FC7B007BB839 /* Views */,
 				4566E9D12982F8A5007BB839 /* Assets.xcassets */,
 				4566E9D32982F8A5007BB839 /* Preview Content */,
+				450F0DF02989EBF400C4375E /* Config.xcconfig */,
 			);
 			path = RedditFeed;
 			sourceTree = "<group>";
@@ -527,6 +529,7 @@
 /* Begin XCBuildConfiguration section */
 		4566E9EC2982F8A5007BB839 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 450F0DF02989EBF400C4375E /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -587,6 +590,7 @@
 		};
 		4566E9ED2982F8A5007BB839 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 450F0DF02989EBF400C4375E /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;

@@ -19,8 +19,8 @@ class LoginViewModel: ObservableObject {
     }
     
     let oauthswift = OAuth2Swift(
-        consumerKey: "uRY0PuKakwxtM8N7ZGvShw",
-        consumerSecret: "rfvszdrgvret",
+        consumerKey: Bundle.main.infoDictionary?["API_KEY"] as! String,
+        consumerSecret: "",
         authorizeUrl:   "https://ssl.reddit.com/api/v1/authorize.compact",
         accessTokenUrl: "https://ssl.reddit.com/api/v1/access_token",
         responseType:   "token"
